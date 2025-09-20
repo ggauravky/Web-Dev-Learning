@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(12, 211, 68);
+}
+.bacho{
+    text-shadow: 1px 3px 1px;
+}
+
+#main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 400x;
+    width: 300px;
+
+}
