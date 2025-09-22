@@ -26,15 +26,63 @@
         border: 10px solid black;
         box-sizing: border-box;
     }
+
+    div {
+        font-size: 2em;
+        /* 2 times the parent's font size */
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        /* 32px */
+    }
+
+    .container {
+        width: 100vw;
+        /* Full width of the viewport */
+        height: 100vh;
+        /* Full height of the viewport */
+    }
+
+    section {
+        width: calc(100% - 200px);
+    }
 </style>
 
 <body>
     <div class="abc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur hic dolores natus quos cupiditate perspiciatis repellat, enim illum exercitationem eveniet.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur hic dolores natus quos
+        cupiditate perspiciatis repellat, enim illum exercitationem eveniet.
     </div>
     <div class="card">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore itaque animi maxime! Facere accusamus aliquid omnis soluta qui odit cupiditate aut quibusdam?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore itaque animi maxime! Facere accusamus aliquid
+        omnis soluta qui odit cupiditate aut quibusdam?
     </div>
+    <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel error impedit illum minus veniam illo, asperiores reiciendis ipsum, aperiam, voluptatibus harum quas.</section>
+
+    <!-- css units -->
+    <!-- 
+    px Pixels (most common absolute unit)
+    pt Points (1/72 of an inch)
+    cm Centimeters
+    mm Millimeters
+    in Inches -->
+
+
+    <!-- 
+    Unit           Description
+    %              Relative to parent element
+    em             Relative to parent’s font size
+    rem            Relative to root font size (usually <html> )
+    vw             1% of viewport width
+    vh             1% of viewport height
+    vmin           1% of smaller viewport dimension
+    vmax           1% of larger viewport dimension -->
+
 
 
 </body>
