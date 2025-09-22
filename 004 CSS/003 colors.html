@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        p {
+            color: black;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            /* hex colors */
+        }
+
+        p {
+            color: rgb(255, 0, 0);
+        }
+
+        /* RGB color */
+
+        div {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* RGBA(RGB + alpha) */
+
+        h2 {
+            color: hsl(240, 100%, 50%);
+        }
+
+        /*
+        HSL
+        Hue (color angle on the color wheel)
+        Saturation (intensity of the color)
+        Lightness (brightness)
+        */
+
+        section {
+            background-color: hsla(120, 60%, 70%, 0.3);
+        }
+
+        /*  
+        HSLA
+        */
+
+        /* Transparent and CurrentColor */
+        button {
+            color: blue;
+            border: 2px solid currentColor;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus esse incidunt eveniet molestiae quibusdam
+        rerum temporibus. In alias repellat nisi, minus blanditiis officia aliquid voluptatibus. Sint, deserunt
+        sapiente. Ratione veritatis modi debitis.</p>
+    <div class="black"></div>
+    <div class="blue">
+        <p>this is black</p>
+    </div>
+</body>
+
+</html>
