@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* content -> padding -> border -> margin */
+    .abc {
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        border: 5px solid gray;
+        margin: 40px;
+    }
+
+    /* Width: 300 + 2*20 (padding) + 2*5 (border) = 350px
+        Height: 150 + 2*20 (padding) + 2*5 (border) = 200px */
+
+    .card {
+        background-color: blue;
+        width: 400px;
+        padding: 20px;
+        border: 10px solid black;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="abc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur hic dolores natus quos cupiditate perspiciatis repellat, enim illum exercitationem eveniet.
+    </div>
+    <div class="card">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore itaque animi maxime! Facere accusamus aliquid omnis soluta qui odit cupiditate aut quibusdam?
+    </div>
+
+
+</body>
+
+</html>
