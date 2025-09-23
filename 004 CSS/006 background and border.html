@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: aliceblue;
+            border: 2px solid blue;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            background-repeat: repeat;
+            /* background-position: center;
+            background-size: cover;
+            background-attachment: scroll; */
+            /* Default */
+
+            border-style: solid;
+            /* Common */
+            border-style: dashed;
+            border-style: dotted;
+            border-style: double;
+            border-style: none;
+
+            button {
+                border-radius: 10px;
+            }
+
+            border-top: 1px solid black;
+            border-right: 2px dashed red;
+            border-bottom: none;
+            border-left: 3px dotted green;
+        }
+
+        .animated-border {
+            width: 500px;
+            height: 100px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            animation: borderRotate 10s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% {
+                border: 2px solid rgb(0, 140, 255);
+            }
+
+            25% {
+                border: 2px solid rgb(0, 217, 255);
+            }
+
+            50% {
+                border: 2px solid rgb(128, 208, 255);
+            }
+
+            75% {
+                border: 2px solid rgb(0, 217, 255);
+            }
+
+            100% {
+                border: 2px solid rgb(0, 140, 255);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto expedita quaerat, ut ipsa similique soluta
+        inventore in exercitationem fugit non porro vitae veritatis quia quod necessitatibus quo reiciendis, eaque qui
+        vel sint saepe numquam?</p>
+
+    <div class="animated-border">Animated Border</div>
+</body>
+
+</html>
