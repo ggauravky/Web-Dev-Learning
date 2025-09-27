@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        .container{
+            display: grid;
+            width: 800px;
+            height: 400px;
+            background-color: lightgray;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 100px;
+            gap: 10px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 20px;
+            box-sizing: border-box;
+            /* grid-template-columns: 100px 200px 100px; */
+            /* grid-template-rows: auto auto; */
+            /* gap: 20px; */
+            /* border-radius: 10px; */
+            /* padding: 20px; */
+            /* margin: 50px; */
+        }
+        .box1, .box2, .box3, .box4, .box5{
+            background-color: yellow;
+            border: 2px solid black;
+            box-sizing: border-box;
+            /* grid-column: 1 / 3; */
+            /* grid-row: 1 / 3; */
+            /* grid-area: 1 / 1 / 3 / 3; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit fugiat nulla, maiores, consequatur officiis, nisi recusandae tempore assumenda velit fugit vitae sequi mollitia.</p>
+        <p class="box2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia voluptatibus ipsum dolorem. Libero numquam ducimus, eveniet delectus culpa dicta odio ullam cupiditate saepe?</p>
+        <p class="box3">Lorem, ipsum.</p>
+        <p class="box4">Lorem, ipsum dolor.</p>
+        <p class="box5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, ipsam illo laborum maxime voluptatem amet alias, tempora impedit culpa harum rerum sit!</p>
+    </div>
+</body>
+</html>
