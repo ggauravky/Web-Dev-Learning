@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            width: 800px;
+            height: 400px;
+            background-color: lightgray;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+        .box{
+            background-color: yellow;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+            .cont{
+                background-color: lightblue;
+            }
+        }
+        @media (max-width: 600px) {
+            .cont{
+                background-color: lightgreen;
+                width: 300px;
+                height: 200px;
+            }
+            .box{
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <p class="box">hii</p>
+    </div>
+</body>
+</html>
