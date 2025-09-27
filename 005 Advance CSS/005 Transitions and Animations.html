@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 20px;
+            transition: all 0.5s ease-in-out;
+        }
+        .box:hover {
+            background-color: lightblue;
+            transform: scale(1.1);
+        }
+        .box1 {
+            color: black;
+            transition: color 0.3s ease-in-out;
+        }
+        .box1:hover {
+            color: red;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            margin: 10px;
+            display: inline-block;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        /* animation */
+
+        @keyframes moveAndFade {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .box2:hover {
+            animation: moveAndFade 1s infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quia illo voluptatem debitis iusto sed corporis, ut vel harum. Odio ipsum tempora incidunt.</p>
+        <p class="box1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit cumque maxime similique quam autem quidem cum eos fugiat perspiciatis voluptatum? Illum, illo!</p>
+    </div>
+    <div>
+        <div class="box2">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box2">box 3</div>
+        <div class="box2">box 4</div>
+    </div>
+</body>
+</html>
