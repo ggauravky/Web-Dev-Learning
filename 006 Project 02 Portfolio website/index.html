@@ -1,38 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Kumar Yadav</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaurav Kumar Yadav</title>
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <a href="#" class="logo">Gaurav</a>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="#home" class="logo">Gaurav</a>
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h1>Hello, I'm <span>Gaurav Kumar Yadav</span></h1>
-            <h3>And I'm a <span class="typing">Web Developer</span></h3>
-            <a href="#contact" class="btn">Hire Me</a>
-        </div>
+    <!-- CSS-only hamburger (checkbox hack) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
 
-        <div class="home-img">
-            <img src="img.jpg" alt="Gaurav Kumar Yadav">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hello, I'm <span class="name">Gaurav Kumar Yadav</span></h1>
+      <h3>And I'm a <span class="">Web Developer</span></h3>
+      <a class="btn" href="#contact">Hire Me</a>
+
+      <div class="socials" aria-label="social links">
+        <a href="#" aria-label="GitHub"><img src="icons/github.svg" alt=""></a>
+        <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt=""></a>
+        <a href="#" aria-label="Twitter"><img src="icons/twitter.svg" alt=""></a>
+      </div>
+    </div>
+
+    <div class="home-img" aria-hidden="false">
+      <img src="img.jpg" alt="Portrait of Gaurav Kumar Yadav">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>I'm a web developer who builds clean, responsive interfaces with a focus on performance and UX.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="service-grid">
+        <div class="service">
+          <h3>Frontend Development</h3>
+          <p>Semantic HTML & modern CSS (responsive, accessible).</p>
         </div>
-    </section>
+        <div class="service">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first layouts and progressive enhancement.</p>
+        </div>
+        <div class="service">
+          <h3>UI / UX</h3>
+          <p>Clean, usable interfaces and polished interactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="portfolio" class="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+
+      <div class="project-list">
+        <article class="project-item">
+          <img src="pro1.png" alt="Screenshot of Project 1">
+          <div class="project-info">
+            <h3>Project Title 1</h3>
+            <p>Brief description of Project 1.</p>
+          </div>
+          <div class="overlay">
+            <a class="project-btn" href="#" aria-label="View Project 1">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <img src="pro2.png" alt="Screenshot of Project 2">
+          <div class="project-info">
+            <h3>Project Title 2</h3>
+            <p>Brief description of Project 2.</p>
+          </div>
+          <div class="overlay">
+            <a class="project-btn" href="#" aria-label="View Project 2">View Project</a>
+          </div>
+        </article>
+
+        <article class="project-item">
+          <img src="pro3.jpg" alt="Screenshot of Project 3">
+          <div class="project-info">
+            <h3>Project Title 3</h3>
+            <p>Brief description of Project 3.</p>
+          </div>
+          <div class="overlay">
+            <a class="project-btn" href="#" aria-label="View Project 3">View Project</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Want to work together? <a href="mailto:gaurav@gmail.com">Email me</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Gaurav Kumar Yadav — All rights reserved</p>
+    </div>
+  </footer>
 </body>
-
 </html>
