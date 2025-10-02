@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque minima fuga quia praesentium omnis cupiditate debitis reprehenderit animi blanditiis officiis, ab, alias soluta quasi! Eos alias quod saepe temporibus laboriosam debitis rem modi.</div>
+
+    <script>
+        let head = document.querySelector('.head');
+
+        let age = 17;
+
+        if(age >= 18){
+            head.style.color = 'green';
+            head.style.fontSize = '30px';
+            head.innerHTML += '<br> You are eligible to vote.';
+        } else {
+            head.style.color = 'red';
+            head.style.fontSize = '20px';
+            head.innerHTML += '<br> You are not eligible to vote.';
+        }
+
+        // if - else if - else
+        let num = 0;
+        if(num > 0){
+            head.innerHTML += '<br> Number is positive.';
+        } else if(num < 0){
+            head.innerHTML += '<br> Number is negative.';
+        } else {
+            head.innerHTML += '<br> Number is zero.';
+        }
+
+        // nested if
+        let num1 = 10;
+        if(num1 >= 0){
+            if(num1 === 0){
+                head.innerHTML += '<br> Number is zero.';
+            } else {
+                head.innerHTML += '<br> Number is positive.';
+            }
+        } else {
+            head.innerHTML += '<br> Number is negative.';
+        }
+
+        // ternary operator
+        let age1 = 20;  
+        let message = (age1 >= 18) ? 'You are eligible to vote.' : 'You are not eligible to vote.';
+        console.log(message);
+    </script>
+</body>
+</html>
