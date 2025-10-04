@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="string">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit modi amet deleniti cum animi delectus possimus, provident quaerat error facilis molestiae nihil inventore nisi ab voluptates officia voluptatibus. Tenetur id maiores nihil quod.</div>
+    <script>
+        let str = "Hello World";
+
+        console.log('String:', str);
+        console.log('Length of string:', str.length);
+        console.log('First character:', str.charAt(0));
+        console.log('Last character:', str.charAt(str.length - 1));
+        console.log('Substring (0, 5):', str.substring(0, 5));
+        console.log('Index of "World":', str.indexOf("World"));
+        console.log('Replaced string:', str.replace("World", "JavaScript"));
+        console.log('Uppercase:', str.toUpperCase());
+        console.log('Lowercase:', str.toLowerCase());
+        console.log('Trimmed string:', str.trim());
+
+        function showText(){
+            document.querySelector('.string').innerText = "Hello JavaScript";
+        }
+        setTimeout(showText, 2000);
+
+        let words = str.split(" ");
+        console.log('Split string into array:', words);
+
+        let newStr = words.join(" - ");
+        console.log('Joined array into string:', newStr);
+        
+    </script>
+</body>
+</html>
