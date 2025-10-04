@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="stringmethods">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat ipsa dolore explicabo iure! Natus, rem voluptas laudantium dicta quo ea magnam in.</div>
+    <script>
+        let str = "Hello World";
+
+        console.log('String:', str);
+        console.log('Length of string:', str.length);
+        console.log('First character:', str.charAt(0));
+        console.log('Last character:', str.charAt(str.length - 1));
+        console.log('Substring (0, 5):', str.substring(0, 5));
+        console.log('Index of "World":', str.indexOf("World"));
+        console.log('Replaced string:', str.replace("World", "JavaScript"));
+        console.log('Uppercase:', str.toUpperCase());
+        console.log('Lowercase:', str.toLowerCase());
+        console.log('Trimmed string:', str.trim());
+
+        function showText(){
+            document.querySelector('.stringmethods').innerText = "Hello JavaScript";
+        }
+        setTimeout(showText, 2000);
+
+        let words = str.split(" ");
+        console.log('Split string into array:', words);
+
+        let newStr = words.join(" - ");
+        console.log('Joined array into string:', newStr);
+
+        console.log('Includes "Hello":', str.includes("Hello"));
+        console.log('Starts with "Hello":', str.startsWith("Hello"));
+
+        console.log('Ends with "World":', str.endsWith("World"));
+        console.log('Character code of "H":', str.charCodeAt(0));
+        console.log('Concatenated string:', str.concat(" from JavaScript"));
+        console.log('Repeat string 3 times:', str.repeat(3));
+        console.log('Pad start to length 20:', str.padStart(20, '*'));
+        console.log('Pad end to length 20:', str.padEnd(20, '*'));
+        console.log('Search for "World":', str.search("World"));
+
+        console.log('Match "o":', str.match(/o/g));
+        console.log('Slice (0, 5):', str.slice(0, 5));
+        console.log('Locale compare with "Hello World":', str.localeCompare("Hello World"));
+        
+        console.log('Value of string:', str.valueOf());
+        console.log('To string:', str.toString());
+        console.log('From char code 72, 101, 108, 108, 111:', String.fromCharCode(72, 101, 108, 108, 111));
+        console.log('From code point 128512:', String.fromCodePoint(128512));
+        console.log('Raw string:', String.raw`Hello\nWorld`);
+        console.log('To locale upper case:', str.toLocaleUpperCase());
+        console.log('To locale lower case:', str.toLocaleLowerCase());
+        console.log('Normalize string:', str.normalize());
+        console.log('Trim start:', "   Hello World   ".trimStart());
+        console.log('Trim end:', "   Hello World   ".trimEnd());
+        console.log('At index 1:', str.at(1));
+        console.log('Code point at index 0:', str.codePointAt(0));
+        console.log('Last index of "o":', str.lastIndexOf("o"));
+        console.log('Last character using at():', str.at(-1));
+        console.log('Last substring using slice():', str.slice(-5));
+
+        console.log('String from array:', Array.from(str));
+        console.log('String iterator:', str[Symbol.iterator]());
+
+        for (let char of str) {
+            console.log('Character from iterator:', char);
+        }
+        console.log('String prototype:', Object.getPrototypeOf(str));
+        console.log('Is string:', typeof str === 'string');
+        console.log('Is instance of String:', str instanceof String);
+
+        console.log('String with template literals:', `This is a string: ${str}`);
+        
+
+    </script>
+</body>
+</html>
