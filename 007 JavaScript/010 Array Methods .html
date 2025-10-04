@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="array">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit modi amet deleniti cum animi delectus possimus, provident quaerat error facilis molestiae nihil inventore nisi ab voluptates officia voluptatibus. Tenetur id maiores nihil quod.</div>
+    <script>
+        let arr = [10, 20, 30, 40, 50];
+
+        console.log('Array:', arr);
+        console.log('First element:', arr[0]);
+        console.log('Last element:', arr[arr.length - 1]);
+
+        arr.push(60);
+        console.log('After push:', arr);
+
+        arr.pop();
+        console.log('After pop:', arr);
+
+        arr.shift();
+        console.log('After shift:', arr);
+
+        arr.unshift(5);
+        console.log('After unshift:', arr);
+
+        console.log('Array length:', arr.length);
+
+        for(let i = 0; i < arr.length; i++){
+            console.log(`Element at index ${i}:`, arr[i]);
+        }
+
+        arr.forEach((element, index) => {
+            console.log(`forEach - Element at index ${index}:`, element);
+        });
+
+        let mappedArr = arr.map(x => x * 2);
+        console.log('Mapped array (elements multiplied by 2):', mappedArr);
+
+        let filteredArr = arr.filter(x => x > 25);
+        console.log('Filtered array (elements greater than 25):', filteredArr);
+
+        let sum = arr.reduce((acc, curr) => acc + curr, 0);
+        console.log('Sum of all elements:', sum);
+
+        let foundElement = arr.find(x => x > 30);
+        console.log('First element greater than 30:', foundElement);
+
+        let index = arr.indexOf(40);
+        console.log('Index of element 40:', index);
+
+        let slicedArr = arr.slice(1, 4);
+        console.log('Sliced array (from index 1 to 3):', slicedArr);
+
+        let splicedArr = [...arr]; // Create a copy to demonstrate splice
+        splicedArr.splice(2, 1); // Remove one element at index 2
+        console.log('Spliced array (removed element at index 2):', splicedArr);
+
+        let joinedStr = arr.join(' - ');
+        console.log('Joined array elements into string:', joinedStr);
+        let sortedArr = [...arr].sort((a, b) => b - a); // Sort in descending order
+        console.log('Sorted array (descending):', sortedArr);
+        let reversedArr = [...arr].reverse();
+        console.log('Reversed array:', reversedArr);
+        function showText(){
+            document.querySelector('.array').innerText = "Hello World";
+        }
+        setTimeout(showText, 2000);
+    </script>
+</body>
+</html>
