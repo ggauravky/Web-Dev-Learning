@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElementsByClassName</title>
+  </head>
+  <body>
+    <div class="box" id="box1">Box 1</div>
+    <div class="box">Box 2</div>
+    <button onclick="magic()">Magic</button>
+
+    <script>
+      function magic() {
+        let b1 = Array.from(document.getElementsByClassName("box"));
+        // console.log(b1)
+        for (let Element of b1) {
+          console.log(Element.innerHTML);
+          Element.innerHTML="this is "+ Element.innerHTML
+        }
+      }
+    </script>
+  </body>
+</html>
