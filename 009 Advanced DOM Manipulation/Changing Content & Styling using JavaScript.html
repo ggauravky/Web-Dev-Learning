@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="cont1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,<strong>hii</strong> quisquam facere.
+    </div>
+    <p class="cont" id="abc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione placeat eius inventore ipsum, rem nam aliquam. Sint adipisci distinctio perferendis vel voluptatem.</p>
+    <div class="form">
+      <p>Welcome</p>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <br /><br />
+        <button type="submit" onclick="sub(event)">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      function sub(event) {
+        event.preventDefault();// stop the form from refreshing the page
+        const value = document.getElementById("name").value;
+        console.log(value);
+
+      }
+
+    //   const para =document.getElementById("cont");
+    //   console.log(para.textContent);
+    //   para.textContent="hii i am good"
+
+      const abc=document.getElementById("abc");
+      abc.innerHTML="<p> hiii this line is changed by inner html </p>"
+
+      abc.style.color="blue"
+
+    </script>
+  </body>
+</html>
