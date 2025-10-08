@@ -162,6 +162,8 @@ This is a personal learning repository, but feel free to:
 
 ## 📝 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 This project is for educational purposes. Feel free to use the code for learning and reference.
 
 ## 🙏 Acknowledgments
