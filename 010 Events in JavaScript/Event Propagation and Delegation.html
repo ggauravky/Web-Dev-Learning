@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box 1"> box 1</div>
+        <div class="box 2"> box 2</div>
+        <div class="box 3"> box 3</div>
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+
+        function logEvent(e) {
+            console.log(e.target.textContent);
+        }
+
+        container.addEventListener('click', logEvent);
+
+        // const box1 = document.querySelector('.box.1');
+        // const box2 = document.querySelector('.box.2');
+        // const box3 = document.querySelector('.box.3');
+        // box1.addEventListener('click', logEvent);
+
+        // box2.addEventListener('click', logEvent);
+
+        // box3.addEventListener('click', logEvent);
+
+        
+    </script>
+</body>
+</html>
