@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="jsonInput">Enter JSON:</label><br>
+        <textarea id="jsonInput" rows="10" cols="50"></textarea><br>
+        <button type="button" onclick="parseJSON()">Parse JSON</button>
+    </form>
+    <script>
+        function parseJSON() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            try {
+                const parsedData = JSON.parse(jsonInput);
+                console.log('Parsed JSON:', parsedData);
+                alert('JSON parsed successfully! Check the console for output.');
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+                alert('Invalid JSON format. Please correct it and try again.');
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
