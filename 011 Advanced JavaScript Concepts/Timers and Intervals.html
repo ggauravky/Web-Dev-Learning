@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Here we are learning the concepts of the time and intervals and also the dark mode toggle</title>
 </head>
 <body>
     <div class="container">
@@ -11,6 +11,12 @@
         <button id="startTimer">Start Timer</button>
         <button id="stopTimer">Stop Timer</button>
         <p id="timerDisplay">Timer not started.</p>
+
+        <div class="cont">
+            <h2>Dark Mode Toggle</h2>
+            <p>Double-click anywhere on the page to toggle dark mode.</p>
+        </div>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
     </div>
     <script>
         let timerDisplay = document.getElementById('timerDisplay');
@@ -20,19 +26,59 @@
         let seconds = 0;
 
         startButton.addEventListener('click', () => {
-            if (!timerId) {
-                timerId = setInterval(() => {
-                    seconds++;
-                    timerDisplay.textContent = `Timer: ${seconds} seconds`;
-                }, 1000);
-            }
+            // If timer is already running, do nothing
+            if (timerId) return;
+            // Start or resume timer
+            timerId = setInterval(() => {
+                seconds++;
+                timerDisplay.textContent = `Timer: ${seconds} second${seconds === 1 ? '' : 's'}`;
+            }, 1000);
         });
 
         stopButton.addEventListener('click', () => {
+            if (!timerId) return; // nothing to stop
             clearInterval(timerId);
             timerId = null;
-            timerDisplay.textContent += ' (stopped)';
+            // Replace the display rather than appending repeatedly
+            timerDisplay.textContent = `Timer: ${seconds} second${seconds === 1 ? '' : 's'} (stopped)`;
         });
+
+        //we are adding the dark mode
+
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+        };
+
+        // Wire both the double-click on body and the button to the same handler
+        document.body.addEventListener('dblclick', toggleDarkMode);
+        const darkModeButton = document.getElementById('darkModeToggle');
+        if (darkModeButton) {
+            darkModeButton.addEventListener('click', toggleDarkMode);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .dark-mode {
+                background-color: #121212;
+                color: #ffffff;
+            }
+            .dark-mode button {
+                background-color: #333333;
+                color: #ffffff;
+            }
+        `;
+
+        document.head.appendChild(style);
+
+        // We already toggle via toggleDarkMode; keep a state variable in case it's needed later
+        let isDarkMode = false;
+        // Keep state in sync with class changes
+        const syncDarkModeState = () => {
+            isDarkMode = document.body.classList.contains('dark-mode');
+        };
+        // Update state whenever toggled
+        document.body.addEventListener('dblclick', syncDarkModeState);
+        if (darkModeButton) darkModeButton.addEventListener('click', syncDarkModeState);
     </script>
 </body>
 </html>

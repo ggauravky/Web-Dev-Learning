@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark mode toggle</title>
+</head>
+<body>
+    <div class="main">Here is the main page , where i am learning how the dark mode toogle button working?</div>
+    <button id="darkmode">Click here for the dark mode</button>
+
+    <script>
+        const darkModeButton = document.getElementById('darkmode');
+
+        // Correctly spelled and implemented toggle function
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+            // Update button text to reflect current mode
+            if (darkModeButton) {
+                const isDark = document.body.classList.contains('dark-mode');
+                darkModeButton.textContent = isDark ? 'Disable Dark Mode' : 'Enable Dark Mode';
+            }
+        };
+
+        if (darkModeButton) {
+            darkModeButton.addEventListener('click', toggleDarkMode);
+        } else {
+            console.log('Button not found');
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            .dark-mode {
+                background-color: #121212;
+                color: #ffffff;
+            }
+            button { padding: 8px 12px; margin-top: 12px; }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize button text based on current state
+        if (darkModeButton) {
+            darkModeButton.textContent = document.body.classList.contains('dark-mode') ? 'Disable Dark Mode' : 'Enable Dark Mode';
+        }
+    </script>
+</body>
+</html>
