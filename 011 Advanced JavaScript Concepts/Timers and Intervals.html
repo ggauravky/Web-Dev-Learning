@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Timers and Intervals Example</h1>
+        <button id="startTimer">Start Timer</button>
+        <button id="stopTimer">Stop Timer</button>
+        <p id="timerDisplay">Timer not started.</p>
+    </div>
+    <script>
+        let timerDisplay = document.getElementById('timerDisplay');
+        let startButton = document.getElementById('startTimer');
+        let stopButton = document.getElementById('stopTimer');
+        let timerId;
+        let seconds = 0;
+
+        startButton.addEventListener('click', () => {
+            if (!timerId) {
+                timerId = setInterval(() => {
+                    seconds++;
+                    timerDisplay.textContent = `Timer: ${seconds} seconds`;
+                }, 1000);
+            }
+        });
+
+        stopButton.addEventListener('click', () => {
+            clearInterval(timerId);
+            timerId = null;
+            timerDisplay.textContent += ' (stopped)';
+        });
+    </script>
+</body>
+</html>
