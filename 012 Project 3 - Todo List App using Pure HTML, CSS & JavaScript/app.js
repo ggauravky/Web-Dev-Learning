@@ -1,8 +1,3 @@
-// =============================================
-// TODO APP - COMPLETE FUNCTIONALITY
-// =============================================
-
-// DOM Elements
 const addTodoBtn = document.getElementById("addTodoBtn");
 const inputTag = document.getElementById("todoInput");
 const todoListUL = document.getElementById("todoList");
@@ -10,18 +5,11 @@ const itemsLeftSpan = document.getElementById("itemsLeft");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 const filterBtns = document.querySelectorAll(".filter-btn");
 
-// State
 let todos = [];
 let currentFilter = 'all'; // all, active, completed
 let editingIndex = null;
 
-// =============================================
-// LOCAL STORAGE FUNCTIONS
-// =============================================
 
-/**
- * Load todos from localStorage
- */
 function loadTodos() {
   try {
     const raw = localStorage.getItem("todos");
@@ -50,9 +38,6 @@ function loadTodos() {
   }
 }
 
-/**
- * Save todos to localStorage
- */
 function saveTodos() {
   try {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -61,26 +46,18 @@ function saveTodos() {
   }
 }
 
-// =============================================
-// UI UPDATE FUNCTIONS
-// =============================================
 
-/**
- * Update the items left counter
- */
 function updateItemsLeft() {
   if (!itemsLeftSpan) return;
   const left = todos.filter(t => !t.isCompleted).length;
   itemsLeftSpan.textContent = `${left} item${left !== 1 ? 's' : ''} left`;
 }
 
-/**
- * Populate and render todos based on current filter
- */
+
 function renderTodos() {
   if (!todoListUL) return;
 
-  // Filter todos based on current filter
+
   let filteredTodos = todos;
   if (currentFilter === 'active') {
     filteredTodos = todos.filter(t => !t.isCompleted);
@@ -88,7 +65,6 @@ function renderTodos() {
     filteredTodos = todos.filter(t => t.isCompleted);
   }
 
-  // Generate HTML
   let html = '';
   if (filteredTodos.length === 0) {
     html = '<li class="empty-state">No tasks to display</li>';
@@ -115,22 +91,15 @@ function renderTodos() {
   updateItemsLeft();
 }
 
-/**
- * Escape HTML to prevent XSS
- */
+
 function escapeHtml(text) {
   const div = document.createElement('div');
   div.textContent = text;
   return div.innerHTML;
 }
 
-// =============================================
-// TODO CRUD OPERATIONS
-// =============================================
 
-/**
- * Add a new todo
- */
+
 function addTodo() {
   const title = inputTag.value.trim();
   
@@ -141,7 +110,6 @@ function addTodo() {
     return;
   }
 
-  // Check if we're editing
   if (editingIndex !== null) {
     updateTodo(title);
     return;
@@ -155,16 +123,14 @@ function addTodo() {
     createdAt: Date.now()
   };
 
-  todos.unshift(newTodo); // Add to beginning
+  todos.unshift(newTodo); 
   saveTodos();
   renderTodos();
   inputTag.value = '';
   inputTag.focus();
 }
 
-/**
- * Toggle todo completion status
- */
+
 function toggleTodo(index) {
   if (index < 0 || index >= todos.length) return;
   todos[index].isCompleted = !todos[index].isCompleted;
@@ -172,9 +138,7 @@ function toggleTodo(index) {
   renderTodos();
 }
 
-/**
- * Delete a todo
- */
+
 function deleteTodo(index) {
   if (index < 0 || index >= todos.length) return;
   
@@ -186,9 +150,7 @@ function deleteTodo(index) {
   }
 }
 
-/**
- * Start editing a todo
- */
+
 function startEdit(index) {
   if (index < 0 || index >= todos.length) return;
   
@@ -204,9 +166,7 @@ function startEdit(index) {
   }
 }
 
-/**
- * Update an existing todo
- */
+
 function updateTodo(newTitle) {
   if (editingIndex === null) return;
   
@@ -218,9 +178,7 @@ function updateTodo(newTitle) {
   cancelEdit();
 }
 
-/**
- * Cancel editing
- */
+
 function cancelEdit() {
   editingIndex = null;
   inputTag.value = '';
@@ -231,9 +189,7 @@ function cancelEdit() {
   }
 }
 
-/**
- * Clear all completed todos
- */
+
 function clearCompleted() {
   const completedCount = todos.filter(t => t.isCompleted).length;
   
@@ -249,13 +205,6 @@ function clearCompleted() {
   }
 }
 
-// =============================================
-// FILTER FUNCTIONS
-// =============================================
-
-/**
- * Set the current filter and update UI
- */
 function setFilter(filter) {
   currentFilter = filter;
   
@@ -270,15 +219,7 @@ function setFilter(filter) {
   renderTodos();
 }
 
-// =============================================
-// KEYBOARD SHORTCUTS & UTILITIES
-// =============================================
-
-/**
- * Handle keyboard shortcuts
- */
 function handleKeyboardShortcuts(e) {
-  // ESC key - Cancel editing
   if (e.key === 'Escape' && editingIndex !== null) {
     cancelEdit();
   }
@@ -290,9 +231,7 @@ function handleKeyboardShortcuts(e) {
   }
 }
 
-/**
- * Add shake animation class (add to CSS if not present)
- */
+
 const shakeStyle = document.createElement('style');
 shakeStyle.textContent = `
   @keyframes shake {
@@ -306,15 +245,10 @@ shakeStyle.textContent = `
 `;
 document.head.appendChild(shakeStyle);
 
-// =============================================
-// DRAG AND DROP (BONUS FEATURE)
-// =============================================
 
 let draggedIndex = null;
 
-/**
- * Enable drag and drop for todos
- */
+
 function enableDragAndDrop() {
   todoListUL.addEventListener('dragstart', (e) => {
     if (e.target.classList.contains('todo-item')) {
@@ -350,20 +284,11 @@ function enableDragAndDrop() {
   });
 }
 
-// =============================================
-// EVENT LISTENERS
-// =============================================
-
-/**
- * Initialize event listeners
- */
 function initEventListeners() {
-  // Add todo button
   if (addTodoBtn) {
     addTodoBtn.addEventListener('click', addTodo);
   }
 
-  // Input field - Enter key
   if (inputTag) {
     inputTag.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
@@ -372,32 +297,25 @@ function initEventListeners() {
     });
   }
 
-  // Clear completed button
+
   if (clearCompletedBtn) {
     clearCompletedBtn.addEventListener('click', clearCompleted);
   }
 
-  // Filter buttons
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       setFilter(btn.dataset.filter);
     });
   });
 
-  // Keyboard shortcuts
+
   document.addEventListener('keydown', handleKeyboardShortcuts);
   
   // Enable drag and drop
   enableDragAndDrop();
 }
 
-// =============================================
-// INITIALIZATION
-// =============================================
-
-/**
- * Initialize the app
- */
 function init() {
   loadTodos();
   renderTodos();
@@ -409,14 +327,12 @@ function init() {
   console.log('✅ Todo App initialized successfully!');
 }
 
-// Start the app when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
 
-// Make functions globally available for inline event handlers
 window.toggleTodo = toggleTodo;
 window.deleteTodo = deleteTodo;
 window.startEdit = startEdit;
