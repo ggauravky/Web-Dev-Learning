@@ -1,0 +1,14 @@
+{
+  "name": "my-first-extress-js-code",
+  "version": "1.0.0",
+  "description": "here i am writing my first code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
