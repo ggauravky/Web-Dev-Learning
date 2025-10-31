@@ -1,0 +1,153 @@
+Updating and Deleting in Mongodb
+MongoDB provides powerful methods to update or remove documents from a collection.
+
+This section covers:
+
+updateOne(), updateMany(), $set, $inc
+deleteOne(), deleteMany()
+replaceOne()
+Understanding ObjectId
+Note: All code examples are for MongoDB Compass shell (mongosh).
+
+=======
+
+Updating Documents
+
+updateOne
+
+Updates the first document that matches the filter.
+
+// Change Ali's course to Advanced MongoDB
+db.students.updateOne(
+  { name: 'Ali' }, 
+  { $set: { course: 'Advanced MongoDB' } }
+)
+
+updateMany
+Updates all documents that match the filter.
+
+// Add 1 year to age of all enrolled students
+db.students.updateMany(
+  { enrolled: true },
+  { $inc: { age: 1 } }
+)
+ 
+// Update all MongoDB students to have a new teacher
+db.students.updateMany(
+  { course: 'MongoDB' },
+  { $set: { teacherId: ObjectId("507f1f77bcf86cd799439011") } }
+)
+ 
+ ==================
+
+
+Common Update Operators
+$set: Sets the value of a field
+$unset: Removes a field
+$inc: Increments a numeric field
+$push: Adds an item to an array
+$pull: Removes an item from an array
+$addToSet: Adds unique items to an array
+Examples:
+
+// Add a new grade to Sara's grades array
+db.students.updateOne(
+  { name: 'Sara' },
+  { $push: { grades: 96 } }
+)
+ 
+// Remove enrolled field from Ravi
+db.students.updateOne(
+  { name: 'Ravi' },
+  { $unset: { enrolled: "" } }
+)
+ 
+// Increment teacher's experience by 1
+db.teachers.updateOne(
+  { name: 'Dr. Kumar' },
+  { $inc: { experience: 1 } }
+)
+ 
+
+===============
+
+Replacing a Document
+replaceOne
+Replaces the entire document with a new one (except the _id).
+
+db.students.replaceOne(
+  { name: 'Ravi' },
+  { 
+    name: 'Ravi Kumar',
+    age: 24,
+    course: 'Python',
+    enrolled: true,
+    teacherId: ObjectId("507f1f77bcf86cd799439012"),
+    grades: [80, 85, 82],
+    email: 'ravi.kumar@school.edu'
+  }
+)
+ 
+
+
+Deleting Documents
+deleteOne
+Deletes the first matching document.
+
+// Delete a specific student
+db.students.deleteOne({ name: 'Kabir' })
+
+deleteMany
+Deletes all matching documents.
+
+// Delete all students who are not enrolled
+db.students.deleteMany({ enrolled: false })
+ 
+// Delete all students with low average grades
+db.students.deleteMany({ 
+  $expr: { 
+    $lt: [{ $avg: "$grades" }, 75] 
+  } 
+})
+ 
+
+=============
+
+
+Working with ObjectId
+Each document in MongoDB has a unique _id field of type ObjectId.
+
+In MongoDB Compass, ObjectId is available globally:
+
+// Find a student by _id
+db.students.findOne({ 
+  _id: ObjectId("64bd2e183dd4e6402f10388f") 
+})
+ 
+// Update a teacher by _id
+db.teachers.updateOne(
+  { _id: ObjectId("507f1f77bcf86cd799439011") },
+  { $set: { office: "Room 301" } }
+)
+
+Practical Examples
+Update Student's Teacher
+// Move all Express students to a different teacher
+db.students.updateMany(
+  { course: 'Express' },
+  { $set: { 
+    teacherId: ObjectId("507f1f77bcf86cd799439012"),
+    course: 'Advanced Express'
+  }}
+)
+
+
+===========
+
+Bulk Grade Update
+// Add bonus points to all students of a specific teacher
+db.students.updateMany(
+  { teacherId: ObjectId("507f1f77bcf86cd799439011") },
+  { $push: { grades: 5 } }  // Add 5 bonus points
+)
+
