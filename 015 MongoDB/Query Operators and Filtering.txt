@@ -1,0 +1,96 @@
+Query Operators and Filtering in MongoDB
+
+Purpose:
+
+Query operators in MongoDB are used to filter documents from a collection based on certain conditions.
+
+They help retrieve only the data that matches specific criteria instead of fetching the entire collection.
+
+Basic Filtering:
+
+The simplest query filters documents where a field equals a value.
+Example: db.students.find({ age: 20 })
+
+This returns all documents where the age field is equal to 20.
+
+Comparison Operators:
+Used to compare field values.
+
+$eq : Equal to (Example: { age: { $eq: 20 } })
+
+$ne : Not equal to (Example: { age: { $ne: 20 } })
+
+$gt : Greater than (Example: { age: { $gt: 18 } })
+
+$lt : Less than (Example: { age: { $lt: 30 } })
+
+$gte : Greater than or equal (Example: { age: { $gte: 18 } })
+
+$lte : Less than or equal (Example: { age: { $lte: 25 } })
+
+Logical Operators:
+Used to combine multiple conditions.
+
+$and : Returns documents that match all conditions.
+Example: { $and: [ { age: { $gt: 18 } }, { city: "Delhi" } ] }
+
+$or : Returns documents that match any one condition.
+Example: { $or: [ { city: "Delhi" }, { city: "Mumbai" } ] }
+
+$not : Negates a condition.
+Example: { age: { $not: { $gt: 25 } } }
+
+$nor : Returns documents that do not match any of the conditions.
+Example: { $nor: [ { city: "Delhi" }, { age: { $lt: 20 } } ] }
+
+Element Operators:
+Used to check for field existence or data type.
+
+$exists : Checks if a field exists.
+Example: { phone: { $exists: true } }
+
+$type : Matches documents with a specific data type.
+Example: { age: { $type: "int" } }
+
+Array Operators:
+Used for filtering documents based on array values.
+
+$in : Matches any value in the array.
+Example: { city: { $in: ["Delhi", "Mumbai"] } }
+
+$nin : Opposite of $in.
+Example: { city: { $nin: ["Delhi", "Mumbai"] } }
+
+$all : Array must contain all given elements.
+Example: { tags: { $all: ["tech", "AI"] } }
+
+$size : Matches arrays with a specific length.
+Example: { hobbies: { $size: 3 } }
+
+Evaluation Operators:
+Used for pattern matching and expression-based queries.
+
+$regex : Matches strings using regular expressions.
+Example: { name: { $regex: "^A" } } --> names starting with 'A'
+
+$expr : Allows using aggregation expressions in queries.
+Example: { $expr: { $gt: ["$marks", 75] } }
+
+Combining Filters:
+
+Multiple filters can be combined in one query.
+Example:
+db.students.find({
+age: { $gte: 18, $lte: 25 },
+city: { $in: ["Delhi", "Pune"] }
+})
+
+This finds students aged between 18 and 25 and living in Delhi or Pune.
+
+Summary:
+
+Query operators make MongoDB filtering powerful and flexible.
+
+They allow complex queries using comparisons, logic, arrays, and expressions.
+
+Mastering these helps retrieve exactly the required data efficiently.
