@@ -1,0 +1,37 @@
+# Git, GitHub & Version Control - Quick Notes
+
+## What is Version Control?
+- A system that tracks changes in your code over time
+- Helps you save different versions of your project
+- Like a "save point" system in video games
+- Allows you to go back to previous versions if something breaks
+- Multiple people can work on the same project without conflicts
+
+## What is Git?
+- A free tool for version control
+- Works on your computer (local)
+- Tracks all changes you make to files
+- Creates "snapshots" of your project called "commits"
+- Helps you manage different versions of your code
+- Most popular version control system in the world
+
+## What is GitHub?
+- A website that stores your Git projects online (cloud)
+- Like Google Drive, but for code
+- Lets you share your code with others
+- Helps teams work together on the same project
+- Shows your work to potential employers
+- Free to use for public projects
+
+## Key Differences
+- **Git** = Tool on your computer (Software)
+- **GitHub** = Website to store Git projects (Cloud Service)
+- Think of it like: Git is Microsoft Word, GitHub is OneDrive
+
+## Why Use Them?
+- Save your work safely
+- Collaborate with other developers
+- Track who made what changes
+- Undo mistakes easily
+- Showcase your projects to the world
+- Industry standard for developers
