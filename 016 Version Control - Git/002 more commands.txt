@@ -1,0 +1,91 @@
+MOST IMPORTANT GIT & GITHUB COMMANDS
+=====================================
+
+BASIC SETUP COMMANDS
+--------------------
+git config --global user.name "Your Name" - Set your name for all commits
+git config --global user.email "your@email.com" - Set your email for all commits
+git config --list - Show all your Git settings
+
+STARTING A PROJECT
+------------------
+git init - Create a new Git project in current folder
+git clone <url> - Download a project from GitHub to your computer
+
+SAVING YOUR WORK
+----------------
+git status - Check what files you changed
+git add <filename> - Add one file to be saved
+git add . - Add all changed files to be saved
+git commit -m "message" - Save your changes with a description
+git commit -am "message" - Add and save all changed files in one command
+
+CHECKING HISTORY
+----------------
+git log - See list of all past saves (commits)
+git log --oneline - See short list of past saves
+git diff - See what you changed but not saved yet
+git show <commit-id> - See details of a specific save
+
+BRANCHES (DIFFERENT VERSIONS)
+-----------------------------
+git branch - See all branches (versions) of your project
+git branch <branch-name> - Create a new branch
+git checkout <branch-name> - Switch to another branch
+git checkout -b <branch-name> - Create and switch to new branch in one command
+git merge <branch-name> - Combine another branch into your current branch
+git branch -d <branch-name> - Delete a branch
+
+WORKING WITH GITHUB
+-------------------
+git remote add origin <url> - Connect your project to GitHub
+git remote -v - See which GitHub project you're connected to
+git push origin <branch-name> - Upload your saves to GitHub
+git push -u origin main - Upload main branch and remember it for next time
+git pull - Download latest changes from GitHub
+git fetch - Check for changes on GitHub without downloading
+
+FIXING MISTAKES
+---------------
+git restore <filename> - Undo changes in a file (before adding)
+git restore --staged <filename> - Remove file from staging area
+git reset HEAD~1 - Undo last commit but keep changes
+git reset --hard HEAD~1 - Undo last commit and delete changes (dangerous!)
+git revert <commit-id> - Create new commit that undoes an old commit
+
+USEFUL SHORTCUTS
+----------------
+git stash - Temporarily hide your changes
+git stash pop - Bring back your hidden changes
+git rm <filename> - Delete file and stage the deletion
+git mv <old-name> <new-name> - Rename file and stage the change
+
+CHECKING REMOTE INFO
+--------------------
+git remote show origin - See detailed info about GitHub connection
+git ls-remote - See all branches on GitHub
+
+COLLABORATION COMMANDS
+----------------------
+git pull origin <branch-name> - Download specific branch from GitHub
+git push --force - Force upload (use carefully, can overwrite others' work!)
+git blame <filename> - See who changed each line in a file
+
+TAGS (MARKING IMPORTANT VERSIONS)
+---------------------------------
+git tag <tag-name> - Mark current version with a name
+git tag -a <tag-name> -m "message" - Create tag with description
+git push origin <tag-name> - Upload tag to GitHub
+git push --tags - Upload all tags to GitHub
+
+MOST COMMON WORKFLOW
+--------------------
+1. git pull - Get latest changes
+2. git checkout -b feature-name - Create new branch
+3. (Make your changes)
+4. git add . - Stage all changes
+5. git commit -m "description" - Save changes
+6. git push origin feature-name - Upload to GitHub
+7. (Create Pull Request on GitHub)
+8. git checkout main - Switch back to main
+9. git pull - Update main branch
