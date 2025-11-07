@@ -1,17 +1,17 @@
 import React from 'react'
 import './navbar.css'
 
-const navbar = ({logotext}) => {
+const Navbar = (props) => {
   return (
     <div className='nav'>
-        <div className='logo' style={{color:"purple"}}>{logotext}</div>
+        <div className='logo' style={{color:"purple"}}>{props.logotext}</div>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            {props.items.map((items, index)=>{
+              return <li key={index}>{items}</li>
+            })}
         </ul>
     </div>
   )
 }
 
-export default navbar
+export default Navbar

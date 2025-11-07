@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/navbar.jsx'
 
@@ -15,18 +13,17 @@ function App() {
     setText("you clicked button 2")
   }
 
+  const items = ["Home", "Services", "About", "Contact" ,"Services"]
+
   return (
     <>
-    <Navbar logotext="Gaurav"/>
+    <Navbar logotext="Gaurav" items={items} />
       <div>
-
           <div>{text}</div>
           <div>
             <button onClick={btn1}>button 1</button>
             <br/>
-
             <button onClick={btn2}>button 2</button>
-
             <br />
             <button onClick={()=>{alert("heey , why are you clicking this ? hm..?")}}>button 3</button>
           </div>
@@ -34,7 +31,6 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
