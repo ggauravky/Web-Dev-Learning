@@ -15,15 +15,17 @@ function App() {
 
   const items = ["Home", "Services", "About", "Contact" ,"Services"]
 
+  const isDiabled = false;
+
   return (
     <>
     <Navbar logotext="Gaurav" items={items} />
       <div>
           <div>{text}</div>
           <div>
-            <button onClick={btn1}>button 1</button>
+            {isDiabled && <button onClick={btn1}>suger cofee</button>}
             <br/>
-            <button onClick={btn2}>button 2</button>
+            <button onClick={btn2}>without suger cofee</button>
             <br />
             <button onClick={()=>{alert("heey , why are you clicking this ? hm..?")}}>button 3</button>
           </div>
