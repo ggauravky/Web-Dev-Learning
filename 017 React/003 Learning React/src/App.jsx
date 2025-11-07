@@ -23,9 +23,12 @@ function App() {
           <div>{text}</div>
           <div>
             <button onClick={btn1}>button 1</button>
-            ,<br/>
+            <br/>
 
             <button onClick={btn2}>button 2</button>
+
+            <br />
+            <button onClick={()=>{alert("heey , why are you clicking this ? hm..?")}}>button 3</button>
           </div>
         
       </div>
