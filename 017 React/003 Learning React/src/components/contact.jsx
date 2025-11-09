@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import styles from "./Button.module.css"
+
 
 const Contact = () => {
     const[name,setName]=useState("");
@@ -20,7 +22,7 @@ const Contact = () => {
             name : <input type="text" value={name} onChange={(e)=>setName(e.target.value)} /><br />
             phone : <input type="text" value={phone} onChange={(e)=>setPhone(e.target.value)} /><br />
             email : <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} /><br />
-            <button type="submit">Submit</button>
+            <button type="submit" className={styles.button}>Submit</button>
         </form>
     </div>
   )
