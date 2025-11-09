@@ -1,51 +1,52 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './components/navbar.jsx'
-import Contact from './components/contact.jsx'
+import { Routes, Route, Link } from "react-router-dom"
+import "./index.css"
+
+
+function Home() {
+  return <h2>Home Page</h2>
+}
+
+function About() {
+  return <h2>About Page</h2>
+}
+
+function Contact() {
+  return <h2>Contact Page</h2>
+}
 
 function App() {
-  const [text, setText] = useState("hey i am a react developer")
-
-  const btn1 = () => {
-    setText("you clicked button 1")
-  }
-
-  const btn2 = () => {
-    setText("you clicked button 2")
-  }
-
-  const items = ["Home", "Services", "About", "Contact" ,"Services"]
-
-  const isDiabled = false;
-
   return (
-    <>
-    <Navbar logotext="Gaurav" items={items} />
+    <div>
+      <nav>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/about">About</Link> |{" "}
+        <Link to="/contact">Contact</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
       <div>
-          <div>{text}</div>
-          <div>
-            {isDiabled && <button onClick={btn1}>suger cofee</button>}
-            <br/>
-            <button onClick={btn2}>without suger cofee</button>
-            <br />
-            <button onClick={()=>{alert("heey , why are you clicking this ? hm..?")}}>button 3</button>
-          </div>
-        
+        <h2>Welcome to My Website</h2>
+        <p>This is a simple React Router example.</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        <p><code>npm run dev</code> to start the development server</p>
-         <div className="intro">Gaurav's first React App</div>
+
+      <div>
+        <h3>Navigation Links:</h3>
+        <ul>
+          <li><Link to="/" className="nav-link">Go to Home</Link></li>
+          <li><Link to="/about" className="nav-link">Learn About Us</Link></li>
+          <li><Link to="/contact" className="nav-link">Contact Us</Link></li>
+        </ul>
       </div>
-     
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Contact />
-    </>
+
+      <footer>
+        <p>&copy; 2025 My Website</p>
+      </footer>
+    </div>
   )
 }
 
