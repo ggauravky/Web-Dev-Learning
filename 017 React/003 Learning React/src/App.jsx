@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom"
+import { useState, useEffect } from "react";
 import "./index.css"
 
 
@@ -15,6 +16,12 @@ function Contact() {
 }
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Clicked ${count} times`;
+  });
+
   return (
     <div>
       <nav>
@@ -28,6 +35,11 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>Click Me</button>
+      </div>
 
       <div>
         <h2>Welcome to My Website</h2>
