@@ -16,3 +16,6 @@ npm install express
 npm install ejs
 
 
+--------------------------------------------------
+
+rafce -> shortcut for react

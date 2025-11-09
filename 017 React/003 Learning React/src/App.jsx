@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/navbar.jsx'
+import Contact from './components/contact.jsx'
 
 function App() {
   const [text, setText] = useState("hey i am a react developer")
@@ -43,6 +44,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Contact />
     </>
   )
 }
